@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "64d0d698-b8e5-4404-9b8a-c5009116a2c4",
+		"name": "api-gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26953116",
+		"_collection_link": "https://solar-escape-501359.postman.co/workspace/New-Team-Workspace~f7bb2fb1-91d6-453d-90d8-a9e15c914507/collection/26953116-64d0d698-b8e5-4404-9b8a-c5009116a2c4?action=share&source=collection_link&creator=26953116"
+	},
+	"item": [
+		{
+			"name": "products all Copy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8080/products/all",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product by category Copy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8080/products/by-id/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"by-id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart add Copy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\":20,\r\n    \"quantity\":10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/cart/add",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"cart",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orders pay Copy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"creditCardNumber\": \"1234-5678-9012-3456\",\r\n    \"cardHolderName\": \"John Doe\",\r\n    \"expiryDate\": \"12/25\",\r\n    \"cvv\": \"421\",\r\n    \"cartId\": \"14-john_doe\",\r\n    \"totalPrice\": 680.0\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8082/orders/pay",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8082",
+					"path": [
+						"orders",
+						"pay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}

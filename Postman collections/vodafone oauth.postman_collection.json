@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "db3f1a46-8a8d-4e8a-9172-0cf563f9e2f3",
+		"name": "vodafone oauth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26953116",
+		"_collection_link": "https://solar-escape-501359.postman.co/workspace/New-Team-Workspace~f7bb2fb1-91d6-453d-90d8-a9e15c914507/collection/26953116-db3f1a46-8a8d-4e8a-9172-0cf563f9e2f3?action=share&source=collection_link&creator=26953116"
+	},
+	"item": [
+		{
+			"name": "oauth",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "vodafone",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vodafone-ecommerce-client",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "code",
+							"value": "EBcWzs0SuPU6kOzdERJyoknhvKizaYxN3xLbQAuFY3dy9wa-zp7oH5WwxvQrOAxUS1aBNE_UzFuMsNGU92WUs1HLNBUQ5RCIP92azEoDoLgMcZ7wrwlFbmd_v8GpqIdJ",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://127.0.0.1:8080/login/oauth2/code/vodafone-ecommerce-client",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/oauth2/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User-by-id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "user add-all",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"userId\": \"john_doe\",\r\n        \"userName\": \"John_Doe\",\r\n        \"userPassword\": \"password123\",\r\n        \"roles\": [\r\n            \"ADMIN\"\r\n        ],\r\n        \"userEmail\": \"harishrcaddesigner@gmail.com\",\r\n        \"userMobile\": \"1234567890\"\r\n    },\r\n    {\r\n        \"userId\": \"alice123\",\r\n        \"userName\": \"Alice_Johnson\",\r\n        \"userPassword\": \"securePass123\",\r\n        \"roles\": [\r\n            \"VIEWER\"\r\n        ],\r\n        \"userEmail\": \"harishrcaddesigner@gmail.com\",\r\n        \"userMobile\": \"9876543210\"\r\n    },\r\n    {\r\n        \"userId\": \"mark_smith\",\r\n        \"userName\": \"Mark Smith\",\r\n        \"userPassword\": \"StrongP@ssword\",\r\n        \"roles\": [\r\n           \"GUEST\"\r\n        ],\r\n        \"userEmail\": \"harishrcaddesigner@gmail.com\",\r\n        \"userMobile\": \"8765432109\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/users/add-all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"add-all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

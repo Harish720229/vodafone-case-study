@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "f466282d-50b6-4f62-9cd9-4f8a83648983",
+		"name": "cart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26953116",
+		"_collection_link": "https://solar-escape-501359.postman.co/workspace/New-Team-Workspace~f7bb2fb1-91d6-453d-90d8-a9e15c914507/collection/26953116-f466282d-50b6-4f62-9cd9-4f8a83648983?action=share&source=collection_link&creator=26953116"
+	},
+	"item": [
+		{
+			"name": "cart add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\":20,\r\n    \"quantity\":10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/cart/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"cart",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orders pay",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiIzM2VmZTdhNS0wYmNmLTRmYTAtODk4Ni0xNmJhMWE1YmVkNWUiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huIiwidXNlcl9lbWFpbCI6InNoYXJtaWxhLmIubGFsbGlAZ21haWwuY29tIiwidXNlcl9uYW1lIjoiam9obiIsInJvbGVzIjpbIkNVU1RPTUVSIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCIsImF1ZCI6InZvZGFmb25lLWVjb21tZXJjZS1jbGllbnQiLCJuYmYiOjE3MTAzMTI4MzEsInVzZXJfaWQiOiJqb2huX2RvZSIsInVzZXJfbW9iaWxlIjoiMTIzNDU2Nzg5MCIsInNjb3BlIjpbIm9wZW5pZCJdLCJleHAiOjE3MTAzMTMxMzEsImlhdCI6MTcxMDMxMjgzMSwianRpIjoiOGU0YzQzY2EtNTdhYS00MGVhLWE5NGMtZmYxZTIwYTgyMzMzIn0.rFT4BnR1ZnX6Aa0Zfpm2c7E2oBgU4jNF8xZSf56n01ffG9xUTo-gxJRhrDrd52BLj7v40yy3k6j5dpQMCH5xamfk6mjmFUM54q1XIC-A1X1QE_Gd24sYuD8zQc9dPmDuSjLU3Hn7S8JekhLaBxvZX7s5XtkidQluuyndu12tH3-6ZzXqT3V7if7dPEYH5IpyaKCaxYXNEHoaN4vWi3Rjici_-dxMFI7aBVDxzorHLhywftLDElmUjhv1jspnOsz2qEGN0cqssCkfixwLZfqVEkRf3bubhmk6w9AkX5YoOTmYvEiugnUsYRWn1jFqA6_FPYoKjEqFIGVgvttQ9IggZw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"creditCardNumber\": \"1234-5678-9012-3456\",\r\n    \"cardHolderName\": \"John Doe\",\r\n    \"expiryDate\": \"12/25\",\r\n    \"cvv\": \"421\",\r\n    \"cartId\": \"14-john_doe\",\r\n    \"totalPrice\": 680.0\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/orders/pay",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"orders",
+						"pay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/cart/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"cart",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart all Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiIyMjMzNTk3Yi01MTUxLTRhY2EtYTZhNy1iYWRhZDI5OWIwN2EiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJNYXJrX1NtaXRoIiwidXNlcl9lbWFpbCI6ImhhcmlzaHJjYWRkZXNpZ25lckBnbWFpbC5jb20iLCJ1c2VyX25hbWUiOiJNYXJrX1NtaXRoIiwicm9sZXMiOlsiQ1VTVE9NRVIiXSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDAwIiwiYXVkIjoidm9kYWZvbmUtZWNvbW1lcmNlLWNsaWVudCIsIm5iZiI6MTcxMDI1OTMyMiwidXNlcl9pZCI6Im1hcmtfc21pdGgiLCJ1c2VyX21vYmlsZSI6Ijg3NjU0MzIxMDkiLCJzY29wZSI6WyJvcGVuaWQiXSwiZXhwIjoxNzEwMjU5NjIyLCJpYXQiOjE3MTAyNTkzMjIsImp0aSI6IjlhYTBjNTI4LTA3YWQtNGZhNC04ZDdjLTY1N2JhODljMzY5MCJ9.Z5sXDEQwZwPR5cxtyrTaS_-uR3g97YqaQE6QPD3Kn_PZ7-xwHEKu3ZcAFV1ub7mNPoNocZAxSwXJB8XpvbqG9GtGelngRDFGsOYJyFuowvHmTi__n7aAxloBN826Kw4zkZkVo18DHtgmryJAoPJ_60X6f2aqH3fjLpy465xqpD_Q_1SysCuI7LmnAEDXdZBulW3w3J-Q7oLqbk4JZYpNB7i_kBaA7fKOMljJTAnor5UAVFu0YEXlp4cLbnC5ysTNJfQ-c7X-SO91YOg5XyftSMa8Ank9DzR8TrVb82v9y15zuKZKC3A423gTkIn6pidJAp6G-_wLLkkfmRfkfN8Gvw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/getAccessToken",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"getAccessToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart get price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/cart/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"cart",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Table create cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiIyMjMzNTk3Yi01MTUxLTRhY2EtYTZhNy1iYWRhZDI5OWIwN2EiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJNYXJrX1NtaXRoIiwidXNlcl9lbWFpbCI6ImhhcmlzaHJjYWRkZXNpZ25lckBnbWFpbC5jb20iLCJ1c2VyX25hbWUiOiJNYXJrX1NtaXRoIiwicm9sZXMiOlsiQ1VTVE9NRVIiXSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDAwIiwiYXVkIjoidm9kYWZvbmUtZWNvbW1lcmNlLWNsaWVudCIsIm5iZiI6MTcxMDI1OTMyMiwidXNlcl9pZCI6Im1hcmtfc21pdGgiLCJ1c2VyX21vYmlsZSI6Ijg3NjU0MzIxMDkiLCJzY29wZSI6WyJvcGVuaWQiXSwiZXhwIjoxNzEwMjU5NjIyLCJpYXQiOjE3MTAyNTkzMjIsImp0aSI6IjlhYTBjNTI4LTA3YWQtNGZhNC04ZDdjLTY1N2JhODljMzY5MCJ9.Z5sXDEQwZwPR5cxtyrTaS_-uR3g97YqaQE6QPD3Kn_PZ7-xwHEKu3ZcAFV1ub7mNPoNocZAxSwXJB8XpvbqG9GtGelngRDFGsOYJyFuowvHmTi__n7aAxloBN826Kw4zkZkVo18DHtgmryJAoPJ_60X6f2aqH3fjLpy465xqpD_Q_1SysCuI7LmnAEDXdZBulW3w3J-Q7oLqbk4JZYpNB7i_kBaA7fKOMljJTAnor5UAVFu0YEXlp4cLbnC5ysTNJfQ-c7X-SO91YOg5XyftSMa8Ank9DzR8TrVb82v9y15zuKZKC3A423gTkIn6pidJAp6G-_wLLkkfmRfkfN8Gvw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/create-table/carts/cart_id/S",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"create-table",
+						"carts",
+						"cart_id",
+						"S"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Table create  order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/create-table/orders/order_id/S",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"create-table",
+						"orders",
+						"order_id",
+						"S"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
