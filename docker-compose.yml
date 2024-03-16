@@ -1,0 +1,36 @@
+version: '3'
+services:
+  elastic-search:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.12.2
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    networks:
+      - vodafone_network
+
+  dynamodb:
+    image: amazon/dynamodb-local
+    ports:
+      - "8001:8000"
+    networks:
+      - vodafone_network
+
+  mysql-db:
+    image: mysql:latest
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: oauth
+    ports:
+      - "3307:3306"
+    networks:
+      - vodafone_network
+    command: '--default-authentication-plugin=mysql_native_password'
+
+networks:
+  vodafone_network:
+    driver: bridge

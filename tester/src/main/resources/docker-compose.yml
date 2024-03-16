@@ -1,0 +1,156 @@
+version: '3'
+services:
+  elastic-search:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.12.2
+    container_name: elastic_search
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    networks:
+      - vodafone_network
+
+
+  dynamodb:
+      image: amazon/dynamodb-local
+      container_name: dynamo_db
+      ports:
+        - "8001:8000"
+      networks:
+        - vodafone_network
+
+  mysql-db:
+      image: mysql:latest
+      container_name: mysql_db
+      restart: always
+      environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: oauth
+      ports:
+        - "3307:3306"
+      networks:
+        - vodafone_network
+      command: '--default-authentication-plugin=mysql_native_password'
+
+  eureka-server:
+    image: vodafone/training-eureka-server:0.0.1-SNAPSHOT
+    container_name: eureka_server
+    environment:
+      server.port: 8761
+#      JAVA_OPTS: "-Xmx128M -XX:MaxDirectMemorySize=3M -XX:MaxMetaspaceSize=64000K -XX:ReservedCodeCacheSize=64M -Xss256k -Dserver.tomcat.max-threads=10"  # Added to limit memory usage due to infrastructure limitations
+      JAVA_OPTS: "-XX:ReservedCodeCacheSize=64M"
+    ports:
+      - "8761:8761"
+    networks:
+      - vodafone_network
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+
+
+  oauth-server:
+    image: vodafone/training-oauth-server:0.0.1-SNAPSHOT
+    container_name: oauth_server
+    environment:
+      server.port: 8000
+      spring.datasource.url: jdbc:mysql://mysql-db:3306/oauth
+      redirect-uri: http://api-gateway:8080/login/oauth2/code/vodafone-ecommerce-client
+      issuer.url: http://oauth-server:8000
+      logging.level.root: DEBUG
+      JAVA_OPTS: "-XX:ReservedCodeCacheSize=64M"
+    ports:
+      - "8000:8000"
+    networks:
+      - vodafone_network
+    depends_on:
+      - mysql-db
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+
+  api-gateway:
+    image: vodafone/training-api-gateway:0.0.1-SNAPSHOT
+    container_name: api_gateway
+    depends_on:
+      - oauth-server
+      - eureka-server
+    environment:
+      server.port: 8080
+      spring.security.oauth2.client.provider.spring.issuer-uri: http://oauth-server:8000
+#      eureka.client.serviceUrl.defaultZone: http://eureka-server:8761/eureka
+      eureka.client.serviceUrl.defaultZone: http://eureka-server:8761/eureka/
+      spring.security.oauth2.client.registration.vodafone-ecommerce-client.redirect-uri: http://api-gateway:8080/login/oauth2/code/vodafone-ecommerce-client
+    ports:
+      - "8080:8080"
+    networks:
+      - vodafone_network
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+
+  product-service:
+    image: vodafone/training-products-service:0.0.1-SNAPSHOT
+    container_name: product_service
+    depends_on:
+      - oauth-server
+      - eureka-server
+      - elastic-search
+    environment:
+      server.port: 8081
+      eureka.client.serviceUrl.defaultZone: http://eureka-server:8761/eureka/
+      spring.security.oauth2.resourceserver.jwt.issuer-uri: http://oauth-server:8000
+      spring.elasticsearch.uris: http://elastic-search:9200
+      logging.level.root: DEBUG
+      JAVA_OPTS: "-XX:ReservedCodeCacheSize=64M"  # Added to limit memory usage due to infrastructure limitations
+    ports:
+      - "8081:8081"
+    networks:
+      - vodafone_network
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+
+  cart-service:
+    image: vodafone/training-cart-service:0.0.1-SNAPSHOT
+    container_name: cart_service
+    depends_on:
+      - oauth-server
+      - eureka-server
+      - dynamodb
+    environment:
+      server.port: 8082
+      eureka.client.serviceUrl.defaultZone: http://eureka-server:8761/eureka/
+      spring.security.oauth2.resourceserver.jwt.issuer-uri: http://oauth-server:8000
+      amazon.aws.dynamodb.endpoint: http://dynamodb:8000/
+      logging.level.root: INFO
+      AWS_ACCESS_KEY_ID: "fakeMyKeyId"
+      AWS_SECRET_ACCESS_KEY: "fakeSecretAccessKey"
+      JAVA_OPTS: "-XX:ReservedCodeCacheSize=64M"  # Added to limit memory usage due to infrastructure limitations
+    ports:
+      - "8082:8082"
+    networks:
+      - vodafone_network
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+
+networks:
+  vodafone_network:
+    external: false

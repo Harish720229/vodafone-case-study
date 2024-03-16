@@ -1,0 +1,302 @@
+[
+  {
+    "productId": 21,
+    "productName": "Smartphone",
+    "brand": "Samsung",
+    "category": "Electronics",
+    "price": 799,
+    "rating": 4.5,
+    "color": "Black",
+    "size": "N/A"
+  },
+  {
+    "productId": 22,
+    "productName": "Laptop",
+    "brand": "Dell",
+    "category": "Electronics",
+    "price": 1299,
+    "rating": 4.2,
+    "color": "Silver",
+    "size": "15-inch"
+  },
+  {
+    "productId": 23,
+    "productName": "Headphones",
+    "brand": "Sony",
+    "category": "Electronics",
+    "price": 199,
+    "rating": 4.8,
+    "color": "Black",
+    "size": "N/A"
+  },
+  {
+    "productId": 24,
+    "productName": "Tablet",
+    "brand": "Apple",
+    "category": "Electronics",
+    "price": 599,
+    "rating": 4.7,
+    "color": "Space Gray",
+    "size": "10.2-inch"
+  },
+  {
+    "productId": 25,
+    "productName": "Wireless Earbuds",
+    "brand": "Jabra",
+    "category": "Electronics",
+    "price": 149,
+    "rating": 4.4,
+    "color": "White",
+    "size": "N/A"
+  },
+  {
+    "productId": 26,
+    "productName": "Smartwatch",
+    "brand": "Fitbit",
+    "category": "Electronics",
+    "price": 179,
+    "rating": 4.0,
+    "color": "Rose Gold",
+    "size": "Small"
+  },
+  {
+    "productId": 27,
+    "productName": "Digital Camera",
+    "brand": "Canon",
+    "category": "Electronics",
+    "price": 499,
+    "rating": 4.6,
+    "color": "Black",
+    "size": "N/A"
+  },
+  {
+    "productId": 28,
+    "productName": "External Hard Drive",
+    "brand": "Seagate",
+    "category": "Electronics",
+    "price": 89,
+    "rating": 4.3,
+    "color": "Blue",
+    "size": "2TB"
+  },
+  {
+    "productId": 29,
+    "productName": "Wireless Router",
+    "brand": "Linksys",
+    "category": "Electronics",
+    "price": 79,
+    "rating": 4.1,
+    "color": "Black",
+    "size": "N/A"
+  },
+  {
+    "productId": 10,
+    "productName": "Portable Charger",
+    "brand": "Anker",
+    "category": "Electronics",
+    "price": 29,
+    "rating": 4.5,
+    "color": "White",
+    "size": "10000mAh"
+  },
+  {
+    "productId": 1,
+    "productName": "Dress",
+    "brand": "Adidas",
+    "category": "Men's Fashion",
+    "price": 40,
+    "rating": 1.043159211,
+    "color": "Black",
+    "size": "XL"
+  },
+  {
+    "productId": 2,
+    "productName": "Shoes",
+    "brand": "H&M",
+    "category": "Women's Fashion",
+    "price": 82,
+    "rating": 4.026416271,
+    "color": "Black",
+    "size": "L"
+  },
+  {
+    "productId": 3,
+    "productName": "Dress",
+    "brand": "Adidas",
+    "category": "Women's Fashion",
+    "price": 44,
+    "rating": 3.337937559,
+    "color": "Yellow",
+    "size": "XL"
+  },
+  {
+    "productId": 4,
+    "productName": "Shoes",
+    "brand": "Zara",
+    "category": "Men's Fashion",
+    "price": 23,
+    "rating": 1.049522956,
+    "color": "White",
+    "size": "S"
+  },
+  {
+    "productId": 5,
+    "productName": "T-shirt",
+    "brand": "Adidas",
+    "category": "Men's Fashion",
+    "price": 79,
+    "rating": 4.302773408,
+    "color": "Black",
+    "size": "M"
+  },
+  {
+    "productId": 6,
+    "productName": "Dress",
+    "brand": "Adidas",
+    "category": "Men's Fashion",
+    "price": 47,
+    "rating": 1.37956574,
+    "color": "Yellow",
+    "size": "L"
+  },
+  {
+    "productId": 7,
+    "productName": "Jeans",
+    "brand": "Gucci",
+    "category": "Men's Fashion",
+    "price": 37,
+    "rating": 1.356750375,
+    "color": "White",
+    "size": "XL"
+  },
+  {
+    "productId": 8,
+    "productName": "Sweater",
+    "brand": "Zara",
+    "category": "Kids' Fashion",
+    "price": 64,
+    "rating": 4.360303289,
+    "color": "Blue",
+    "size": "XL"
+  },
+  {
+    "productId": 9,
+    "productName": "Sweater",
+    "brand": "H&M",
+    "category": "Men's Fashion",
+    "price": 53,
+    "rating": 4.466181876,
+    "color": "Green",
+    "size": "XL"
+  },
+  {
+    "productId": 10,
+    "productName": "T-shirt",
+    "brand": "Zara",
+    "category": "Kids' Fashion",
+    "price": 55,
+    "rating": 4.093234402,
+    "color": "White",
+    "size": "XL"
+  },
+  {
+    "productId": 11,
+    "productName": "T-shirt",
+    "brand": "Adidas",
+    "category": "Men's Fashion",
+    "price": 51,
+    "rating": 1.160987957,
+    "color": "Red",
+    "size": "S"
+  },
+  {
+    "productId": 12,
+    "productName": "Sweater",
+    "brand": "Gucci",
+    "category": "Kids' Fashion",
+    "price": 91,
+    "rating": 2.699735538,
+    "color": "Yellow",
+    "size": "M"
+  },
+  {
+    "productId": 13,
+    "productName": "Jeans",
+    "brand": "Nike",
+    "category": "Kids' Fashion",
+    "price": 35,
+    "rating": 1.60119358,
+    "color": "Red",
+    "size": "M"
+  },
+  {
+    "productId": 14,
+    "productName": "Dress",
+    "brand": "Zara",
+    "category": "Women's Fashion",
+    "price": 34,
+    "rating": 2.921004204,
+    "color": "White",
+    "size": "L"
+  },
+  {
+    "productId": 15,
+    "productName": "Shoes",
+    "brand": "Zara",
+    "category": "Men's Fashion",
+    "price": 54,
+    "rating": 3.670412239,
+    "color": "Yellow",
+    "size": "M"
+  },
+  {
+    "productId": 16,
+    "productName": "Dress",
+    "brand": "Adidas",
+    "category": "Women's Fashion",
+    "price": 27,
+    "rating": 1.422716143,
+    "color": "Blue",
+    "size": "S"
+  },
+  {
+    "productId": 17,
+    "productName": "Dress",
+    "brand": "Gucci",
+    "category": "Women's Fashion",
+    "price": 75,
+    "rating": 1.480632132,
+    "color": "Blue",
+    "size": "XL"
+  },
+  {
+    "productId": 18,
+    "productName": "Jeans",
+    "brand": "Gucci",
+    "category": "Women's Fashion",
+    "price": 73,
+    "rating": 4.498244681,
+    "color": "Red",
+    "size": "XL"
+  },
+  {
+    "productId": 19,
+    "productName": "Shoes",
+    "brand": "Gucci",
+    "category": "Women's Fashion",
+    "price": 54,
+    "rating": 3.278340556,
+    "color": "White",
+    "size": "M"
+  },
+  {
+    "productId": 20,
+    "productName": "Dress",
+    "brand": "Gucci",
+    "category": "Men's Fashion",
+    "price": 53,
+    "rating": 3.785245245,
+    "color": "Green",
+    "size": "L"
+  }
+]

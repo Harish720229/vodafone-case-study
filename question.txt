@@ -1,0 +1,29 @@
+Project Overview:The Telecom eCommerce platform currently faces challenges in terms of scalability and flexibility. The existing monolithic architecture hinders quick updates and introduces performance bottlenecks during peak usage. The goal is to transition to a microservices-based architecture, with Spring Boot and Java as the primary technologies, and use AWS DynamoDB/ RDS / Mongo DB for better scalability and reliability.
+
+Key Components:
+
+Microservices Architecture:
+	Decompose the existing monolith into microservices to enable independent development and deployment of services.
+	Utilize Spring Boot for building lightweight and efficient microservices.
+	Implement servicediscovery and communication through RESTful APIs.
+User Authentication and Authorization:
+	Implement a centralized authentication service using Spring Security.
+	Use JWT (JSON Web Tokens) for secure and stateless authentication.
+	Integrate authorization checks to control access to different microservices.
+Product Catalog Management:
+	Develop a microservice for managing the telecom product catalog using Elastic search. Use Docker compose to spin up the respective images.
+	Utilize Spring Data for efficient data access and management.
+	Implement CRUD operations for products and categories.
+Shopping Cart and Checkout:
+	Create a microservice for handling shopping cart functionality.
+	Implement secure and seamless checkout processes.
+	Integrate with stubbed payment gateways for transaction processing.
+	Trigger email with order id confirmation.
+Monitoring and Logging:
+	Integrate monitoring tools for tracking microservices performance.
+Testing:
+
+Conduct unit testing, integration testing, and end-to-end testing for each microservice.
+Documentation:
+
+Document the architecture, deployment process, and API documentation for future maintenance.
